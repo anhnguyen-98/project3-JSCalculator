@@ -1,0 +1,85 @@
+:root {
+    --mainTransition: 0.3s ease-in-out;
+    --mainBackgroundColor: blue;
+    --mainBtnColor: rgb(199, 235, 223);;
+    --btnHoverColor :lightblue;
+    --outputColor: rgb(48, 51, 51);
+    --mainWhite: white;
+    --previousOperandColor: rgb(201, 193, 193);
+}
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+} 
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    height: 100%;
+    background: linear-gradient(to right, rgb(70 55 140) , rgb(1 115 36));
+    font-family: monospace;
+    text-align: center;
+}
+.caculator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    min-height: 600px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: minmax(120px, auto) 100px 100px 100px 100px 100px;
+}
+#output {
+    grid-column: 1 / span 4;
+    background-color: var(--outputColor);
+    color: white;
+    border: 1px solid var(--mainWhite);
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+}
+#output #previous-operand {
+    font-size: 26px;
+    color: var(--previousOperandColor);
+}
+.grid-item {
+    font-size: 35px;
+    padding-top: 23px;
+    background-color: var(--mainBtnColor);
+    border: 1px solid var(--mainWhite);
+    transition: var(--mainTransition);
+}
+.grid-item:not(:first-child):hover {
+    cursor: pointer;
+    background-color: var(--btnHoverColor);
+}
+#resultBtn {
+    background-color: var(--mainBtnColor);
+    grid-area: 3/4/7/5;
+    padding-top: 175px;
+    border: 1px solid var(--mainWhite);
+    transition: var(--mainTransition);
+}
+#resultBtn:hover {
+    cursor: pointer;
+    background-color: var(--btnHoverColor);
+}
+#title {
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    color: white;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-weight: 0.3;
+}
+
